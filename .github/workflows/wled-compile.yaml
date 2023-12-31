@@ -28,7 +28,7 @@ jobs:
         cd `cat /tmp/WLEDtemp/wledfoldername`
         echo '[env:custom_build]' >>platformio.ini
         echo 'extends = env:esp32s3dev_8MB_PSRAM_qspi' >>platformio.ini
-        echo 'build_flags = ${env:esp32s3dev_8MB_PSRAM_qspi.build_flags} -D LEDPIN=48 -D BTNPIN=0 -D WLED_MAX_USERMODS=0 -D DEFAULT_LED_TYPE=TYPE_WS2814_RGBW -D WLED_PWM_FREQ=20000 -D CLIENT_SSID='\''"Friebel-2.4G"'\'' -D CLIENT_PASS='\''"mighty2save"'\'' -D WLED_AP_SSID='\''""'\'' -D WLED_AP_PASS='\''""'\''' >>platformio.ini
+        echo 'build_flags = ${env:esp32s3dev_8MB_PSRAM_qspi.build_flags} -D CLIENT_SSID='\''"Friebel-2.4G"'\'' -D CLIENT_PASS='\''"mighty2save"'\''' >>platformio.ini
         
         pio run -e custom_build || pio run -e custom_build
     - name: Copy Files
